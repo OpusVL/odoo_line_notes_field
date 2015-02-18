@@ -33,8 +33,10 @@
     'images': [
     ],
     'depends': [
+        'sale',
     ],
     'data': [
+        'sale_order_notes.xml',
     ],
     'demo': [
     ],
