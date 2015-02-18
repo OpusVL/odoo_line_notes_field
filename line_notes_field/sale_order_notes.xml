@@ -22,7 +22,7 @@
             <field name="inherit_id" ref="account.invoice_supplier_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//tree[@string='Invoice lines']/field[@name='name']" position="after">
-                    <field name="notes" />
+                    <field name="note" />
                 </xpath>
             </field>
         </record>
@@ -33,7 +33,7 @@
             <field name="inherit_id" ref="account.invoice_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//tree[@string='Invoice Lines']/field[@name='name']" position="after">
-                    <field name="notes" />
+                    <field name="note" />
                 </xpath>
             </field>
         </record>

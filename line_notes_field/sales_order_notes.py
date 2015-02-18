@@ -31,7 +31,7 @@ class SalesOrderLine(models.Model):
 
     def _prepare_order_line_invoice_line(self, cr, uid, line, account_id=False, context=None):
         res = super(SalesOrderLine, self)._prepare_order_line_invoice_line(cr, uid, line, account_id, context=context)
-        res['notes'] = line.notes
+        res['note'] = line.notes
         return res
 
 
@@ -39,7 +39,7 @@ class InvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
     _name = 'account.invoice.line'
 
-    notes = fields.Text(string='Notes')
+    note = fields.Text(string='Notes')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
