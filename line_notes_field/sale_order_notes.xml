@@ -16,6 +16,28 @@
             </field>
         </record>
 
+        <record id="view_invoice_form_notes" model="ir.ui.view">
+            <field name="name">account.invoice.form_notes</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree[@string='Invoice lines']/field[@name='name']" position="after">
+                    <field name="notes" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_invoice_form_notes2" model="ir.ui.view">
+            <field name="name">account.invoice.form_notes2</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree[@string='Invoice Lines']/field[@name='name']" position="after">
+                    <field name="notes" />
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
 

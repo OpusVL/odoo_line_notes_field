@@ -22,14 +22,24 @@
 
 from openerp import models, fields, api
 
+
 class SalesOrderLine(models.Model):
     _inherit = 'sale.order.line'
     _name = 'sale.order.line'
 
     notes = fields.Text(string='Notes')
 
-    # FIXME: hook into whatever creates the invoice to ensure the notes field
-    # gets copied over.
+    def _prepare_order_line_invoice_line(self, cr, uid, line, account_id=False, context=None):
+        res = super(SalesOrderLine, self)._prepare_order_line_invoice_line(cr, uid, line, account_id, context=context)
+        res['notes'] = line.notes
+        return res
+
+
+class InvoiceLine(models.Model):
+    _inherit = 'account.invoice.line'
+    _name = 'account.invoice.line'
+
+    notes = fields.Text(string='Notes')
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
