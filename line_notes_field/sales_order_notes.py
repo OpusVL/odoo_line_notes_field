@@ -25,7 +25,6 @@ from openerp import models, fields, api
 
 class SalesOrderLine(models.Model):
     _inherit = 'sale.order.line'
-    _name = 'sale.order.line'
 
     notes = fields.Text(string='Notes')
 
@@ -37,7 +36,6 @@ class SalesOrderLine(models.Model):
 
 class InvoiceLine(models.Model):
     _inherit = 'account.invoice.line'
-    _name = 'account.invoice.line'
 
     note = fields.Text(string='Notes')
 
